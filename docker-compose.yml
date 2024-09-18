@@ -1,0 +1,9 @@
+
+services:
+  web:
+    build: ./front-end
+    container_name: frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./front-end/code/:/app
