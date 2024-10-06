@@ -1,4 +1,7 @@
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faStopwatch } from '@fortawesome/free-solid-svg-icons';
+import { faFacebookF, faXTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 function    Nav() {
     return (
@@ -12,9 +15,9 @@ function    Nav() {
                 <li><a href="/about">About us</a></li>
             </ul>
             <ul className="flex gap-4">
-                <li><a href="/login">FAC</a></li>
-                <li><a href="/signup">TWIT</a></li>
-                <li><a href="/signup">INST</a></li>
+                <FontAwesomeIcon className="text-2xl" icon={faFacebookF} />
+                <FontAwesomeIcon className="text-2xl" icon={faXTwitter} />
+                <FontAwesomeIcon className="text-2xl" icon={faInstagram} />
             </ul>
         </nav>
     );

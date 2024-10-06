@@ -64,7 +64,7 @@ function    Recipes() {
                 <h1 className="font-bold text-xl text-center">Simple and tasty recipes</h1>
                 <p className="text-center text-slate-600">Lorem ipsum dolor sit amet, consectetuipisicing elit<br></br>tempor aliqut enim ad minim</p>
             </div>
-            <div className="grid grid-cols-3 gap-2">
+            <div className="grid grid-cols-3 gap-6">
                 {recipes.map((recipe, index) => {
                     return <Recipe key={index} src={recipe.src} description={recipe.description} dury={recipe.dury} type={recipe.type} />
                 })}
