@@ -4,7 +4,24 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        Breakfast_color_from: "rgba(112, 130, 70, 0)",
+        Breakfast_color_to: "rgba(112, 130, 70, 0.1)",
+        Vegan_color_from: "rgba(108, 198, 63, 0)",
+        Vegan_color_to: "rgba(108, 198, 63, 0.1)",
+        Meat_color_from: "rgba(204, 38, 27, 0)",
+        Meat_color_to: "rgba(204, 38, 27, 0.1)",
+        Dessert_color_from: "rgba(240, 158, 0, 0)",
+        Dessert_color_to: "rgba(240, 158, 0, 0.1)",
+        Lunch_color_from: "rgba(0, 0, 0, 0)",
+        Lunch_color_to: "rgba(0, 0, 0, 0.05)",
+        Chocolate_color_from: "rgba(0, 0, 0, 0)",
+        Chocolate_color_to: "rgba(0, 0, 0, 0.05)",
+        Recipe_color_from: "rgba(231, 249, 253, 0)",
+        Recipe_color_to: "rgba(231, 249, 253, 1)",
+      },
+    },
   },
   plugins: [],
 }
