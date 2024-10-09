@@ -1,4 +1,5 @@
 import Blog_article from "./Blog_article";
+import Tasty_recipe from "./Tasty_recipe";
 
 const articles = [
     {
@@ -21,12 +22,22 @@ const articles = [
 
 function    Blog_articles() {
     return (
-        <div className="flex flex-col gap-4">
-            {articles.map((article, index) => {
-                return (
-                    <Blog_article key={index} title={article.title} description={article.description} article_author_name={article.article_author_name} date={article.date} article_author_src={article.article_author_src} article_src={article.article_src} />
-                )
-            })}
+        <div className="flex justify-evenly">
+            <div className="flex flex-col gap-4">
+                {articles.map((article, index) => {
+                    return (
+                        <Blog_article key={index} title={article.title} description={article.description} article_author_name={article.article_author_name} date={article.date} article_author_src={article.article_author_src} article_src={article.article_src} />
+                    )
+                })}
+            </div>
+            <div className="flex flex-col gap-4">
+                <h1 className="text-2xl font-bold mb-10">Tasty Recipes</h1>
+                {articles.map((article, index) => {
+                    return (
+                        <Tasty_recipe key={index} title={article.title} description={article.description} article_author_name={article.article_author_name} date={article.date} article_author_src={article.article_author_src} article_src={article.article_src}/>
+                    )
+                })}
+            </div>
         </div>
     )
 }
