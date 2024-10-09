@@ -1,12 +1,11 @@
-import Categories from './Categories';
-import Recipes from './Recipes';
-import Instagram from './Instagram';
+import Categories from './Home/Categories';
+import Recipes from './Home/Recipes';
+// import Instagram from './Home/Instagram';
 import { Fragment } from 'react';
-import Nav from './Nav';
-import Delicious from './Delicious';
-import Adds from './Adds';
-import Chef from './Chef';
-import Deliciousness from './Deliciousness';
+// import Delicious from './Home/Delicious';
+import Adds from './Home/Adds';
+import Chef from './Home/Chef';
+// import Deliciousness from './Home/Deliciousness';
 
 const Home = () => {
     return (
@@ -15,9 +14,9 @@ const Home = () => {
             <Categories />
             <Recipes />
             <Chef />
-            <Instagram />
+            {/* <Instagram />
             <Delicious />
-            <Deliciousness />
+            <Deliciousness /> */}
         </Fragment>
     )
 }

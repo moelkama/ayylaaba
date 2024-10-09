@@ -1,16 +1,17 @@
 import Home from './components/Home';
-import Nav from './components/Nav';
+import Nav from './components/Nav/Nav';
 // import Adds from './components/Adds';
 import {Routes, Route} from "react-router-dom"
-import Footer from './components/Footer';
-// import MyComponent from './components/tst';
+import Footer from './components/Footer/Footer';
+import Blog from './components/Blog/Blog';
+
 function App() {
   return (
-      <main className="px-8 flex flex-col gap-20">
+      <main className="px-10 flex flex-col gap-20">
         <Nav />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/receipt" element={<h1>This is Recipes page.</h1>} />
+          <Route path="/Blog" element={<Blog />} />
         </Routes>
         <Footer />
       </main>

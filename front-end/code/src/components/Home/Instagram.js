@@ -21,7 +21,7 @@ function    Instagram() {
             </div>
         </div>
         <div className="flex items-center justify-center">
-            <a href="" className="h-[60px] w-[229px] bg-black font-bold  hover:text-black hover:bg-slate-300 text-slate-300 flex justify-evenly items-center rounded-lg">
+            <a href="/" className="h-[60px] w-[229px] bg-black font-bold  hover:text-black hover:bg-slate-300 text-slate-300 flex justify-evenly items-center rounded-lg">
                 <span className="text-lg">Visit our Instagram </span>
                 <FontAwesomeIcon className="text-3xl" icon={faInstagram} />
             </a>

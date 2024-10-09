@@ -8,6 +8,8 @@ RUN apt-get install nodejs -y
 # RUN npm install tailwindcss postcss autoprefixer
 
 WORKDIR /app/
+# RUN npm install
+
 # npx create-react-app my-app
 
 # CMD ["bash"]

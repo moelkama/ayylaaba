@@ -2,6 +2,7 @@
 services:
   web:
     build: ./front-end
+    image: frontend
     container_name: frontend
     ports:
       - "3000:3000"
