@@ -1,12 +1,9 @@
 commit ?= "$(date +'%Y-%m-%d %H:%M')"
 
-all: build up
+all: up
 
 up:
-	docker-compose up
-
-build:
-	docker-compose build
+	docker-compose up --build
 
 down:
 	docker-compose down
