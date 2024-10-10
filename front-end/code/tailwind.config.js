@@ -5,6 +5,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        Lobster: ['Lobster', 'sans-serif'], // Add your Google Font here
+      },
       colors: {
         Breakfast_color_from: "rgba(112, 130, 70, 0)",
         Breakfast_color_to: "rgba(112, 130, 70, 0.1)",
@@ -22,6 +25,8 @@ module.exports = {
         Recipe_color_to: "rgba(231, 249, 253, 1)",
         Chef_color_from: "rgba(231, 249, 253, 0)",
         Chef_color_to: "rgba(231, 249, 253, 1)",
+        Healty_food_color_from: "rgba(53, 115, 85, 1)",
+        Healty_food_color_to: "rgba(29, 72, 59, 1)",
       },
       rotate: {
         '1': '1deg',

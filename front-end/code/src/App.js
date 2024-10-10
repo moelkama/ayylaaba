@@ -4,6 +4,7 @@ import Nav from './components/Nav/Nav';
 import {Routes, Route} from "react-router-dom"
 import Footer from './components/Footer/Footer';
 import Blog from './components/Blog/Blog';
+import Contact from './components/Contact/Contact';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Blog" element={<Blog />} />
+          <Route path="/Contact" element={<Contact />} />
         </Routes>
         <Footer />
       </main>
