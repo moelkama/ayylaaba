@@ -6,7 +6,7 @@ function    Footer() {
         <footer className="flex flex-col gap-10 pb-10">
             <div className="flex pb-10 justify-between items-center border-b border-slate-300">
                 <div className="">
-                    <span className="font-bold text-xl block text-black">Footer</span>
+                    <span className="font-bold text-xl block text-black font-Lobster">Foodieland</span>
                     <span className="text-slate-600 block text-lg">Lorem ipsum dolor sit amet, consectetuipisicing elit</span>
                 </div>
                 <ul className="flex gap-8">

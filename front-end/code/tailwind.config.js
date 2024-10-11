@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        Lobster: ['Lobster', 'sans-serif'], // Add your Google Font here
+        Lobster: ['Lobster', 'sans-serif'],
       },
       colors: {
         Breakfast_color_from: "rgba(112, 130, 70, 0)",
@@ -27,6 +27,7 @@ module.exports = {
         Chef_color_to: "rgba(231, 249, 253, 1)",
         Healty_food_color_from: "rgba(53, 115, 85, 1)",
         Healty_food_color_to: "rgba(29, 72, 59, 1)",
+        Form_text_color: "rgba(0, 0, 0, 0.6)",
       },
       rotate: {
         '1': '1deg',
@@ -38,5 +39,7 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar'),
+  ],
 }

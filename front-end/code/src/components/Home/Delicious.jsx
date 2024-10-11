@@ -1,4 +1,4 @@
-import Recipe from './Recipe';
+import Recipe from '../Recipe/Recipe';
 
 const recipes = [
     {
@@ -64,8 +64,9 @@ function    Delicious() {
             </div>
             <div className="grid grid-cols-4 gap-4">
                 {recipes.map((recipe, index) => {
-                    return <Recipe key={index} src={recipe.src} description={recipe.description} dury={recipe.dury} type={recipe.type} />
-                })}
+                    return <Recipe key={index} recipe={recipe} />
+                    })
+                }
             </div>
         </div>
     )

@@ -9,6 +9,8 @@ RUN apt-get install nodejs -y
 
 WORKDIR /app/
 # RUN npm install
+# npm install --save-dev tailwind-scrollbar
+# npm i tailwind-scrollbar
 
 # npx create-react-app my-app
 
