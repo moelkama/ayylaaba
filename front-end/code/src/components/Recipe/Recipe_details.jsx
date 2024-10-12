@@ -1,5 +1,8 @@
 import { useParams } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faArrowUpFromBracket, faPrint,  faStopwatch, faUtensils } from '@fortawesome/free-solid-svg-icons';
 
+// import { faArrowUpFromBracket, faPrint } from '@fortawesome/free-regular-svg-icons'
 const recipes = [
     {
         id: 1,
@@ -66,33 +69,68 @@ const recipes = [
     },
 ]
 
+const c = [
+    {
+        
+    }
+]
+
 export  default function Recipe_details() {
     // const { id } = useParams();
 
     return (
         <div className="bg-blue-700l grid grid-cols-12 gap-x-10 gap-y-20">
-            <div className="col-start-1 col-end-9 flex flex-col gap-10">
+            <div className="col-start-1 col-end-9 flex flex-col gap-14">
                 <h1 className="text-5xl font-bold">Health Japanese Fried Rice</h1>
                 <div className="flex">
-                    <div className="flex items-center gap-2 pr-10 border-slate-400 border-r">
+                    <div className="flex items-center gap-2 pr-10 border-slate-300 border-r">
                         <img alt="" className="w-12 h-12 rounded-full" src="https://s3-alpha-sig.figma.com/img/2649/d4c7/dab521f6cd5545aa07040c074c97ef51?Expires=1729468800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=U25fKgthtnNUE5lPCaSho7afzcOpYt~5uirwHJZ5El-hOWdQP6Zp6RFJfgVzu7wElGKhN9qt66s84Cb7aPaiC9POSXTevzuL82ZObuzwchq~07Oa1NGdkpctNwuXjRpKci6v6lTUJjmRYGAieup0Oy4lKogzUmSR2DYQLkiQvoD5Wx14bjTOzpG-VOZAi7268rxxorKiy-8EnaczUs0lEpI~z9Nwr3UWnp~4mwbteJbktS07OWOfe6G4qA6t5L~UhGxzkLfUKToejAg-yEqGRjuXP5~pfecmuybdqcQCofIBxJeolacPzBUfqk2hJ1x0H6~~cAfiL8sKFkCBpvL7TQ__"></img>
                         <div>
                             <h1 className="font-bold">John Smith</h1>
                             <span className="">15 March 2022</span>
                         </div>
                     </div>
-                    <div>
-                        <h1>i</h1>
-                        <div>
-                            <h1>PREP TIME</h1>
-                            <h1>15 Minutes</h1>
+                    <div className="flex gap-3 justify-center items-center px-10 border-slate-300 border-r">
+                        <FontAwesomeIcon className="text-2xl text-black" icon={faStopwatch} />
+                        <div >
+                            <h1 className="text-lg">PREP TIME</h1>
+                            <h1 className="text-sm text-slate-400">15 Minutes</h1>
                         </div>
                     </div>
+                    <button className="flex gap-3 justify-center items-center px-10 border-slate-300 border-r">
+                        <FontAwesomeIcon className="text-2xl text-black" icon={faStopwatch} />
+                        <div >
+                            <h1 className="text-lg">PREP TIME</h1>
+                            <h1 className="text-sm text-slate-400">15 Minutes</h1>
+                        </div>
+                    </button>
+                    <button className="flex gap-3 justify-center items-center px-10">
+                        <FontAwesomeIcon className="text-2xl text-black" icon={faUtensils} />
+                        <span>Ckicken</span>
+                    </button>
                 </div>
             </div>
-            <div className="col-start-9 col-end-13 flex justify-end items-center">
-                <div className="h-10 w-10 rounded-full bg-black"></div>
-                <div className="h-10 w-10 rounded-full bg-black"></div>
+            <div className="col-start-9 col-end-13 flex gap-4 justify-end items-center">
+                <div className="hover:bg-black hover:text-white hover:text-2xl text-black h-20 w-20 rounded-full bg-Share_color flex justify-center items-center">
+                    <FontAwesomeIcon icon={faPrint} />
+                </div>
+                <div className="hover:bg-black hover:text-white hover:text-2xl text-black h-20 w-20 rounded-full bg-Share_color flex justify-center items-center">
+                    <FontAwesomeIcon icon={faArrowUpFromBracket} />
+                </div>
+            </div>
+            <div className="col-start-1 col-end-9 bg-blue-700">
+                <video className="" controls type="video/mp4" src="https://rr1---sn-h5q7knez.googlevideo.com/videoplayback?expire=1728714814&ei=3sMJZ8DJDqHGjuMPt93C4QU&ip=118.99.68.4&id=o-ABMIG6j8o9o8mo8aHYv8MJ95m-J6ZfgDArLaNHmGVLwl&itag=137&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&bui=AXLXGFTB1g_nqFwMVpN4E0nNaF9ZxKNK8XEK9j7Tj5WGIWLsepdXvGxkfdYFiPbC_OYBGzTcuEtlgd6G&vprv=1&mime=video%2Fmp4&rqh=1&gir=yes&clen=28304680&dur=88.708&lmt=1696295815407686&keepalive=yes&fexp=24350655,24350673,51300760&c=MEDIA_CONNECT_FRONTEND&txp=5318224&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cbui%2Cvprv%2Cmime%2Crqh%2Cgir%2Cclen%2Cdur%2Clmt&sig=AJfQdSswRgIhALpBoId8EJg5nf5r9ID9XJN50AHgNP7IxL9jC8kmo8MeAiEA49ptozVrzB8YKMKY19O3gbBrExuh8QqJpIKVzVcAXe8%3D&rm=sn-cp1oxu-n0cl7e,sn-a5mye7e&rrc=79,104&req_id=8fc242569ef7a3ee&met=1728693263,&rms=rdu,au&redirect_counter=2&cms_redirect=yes&cmsv=e&ipbypass=yes&mh=rw&mip=197.147.159.225&mm=29&mn=sn-h5q7knez&ms=rdu&mt=1728692938&mv=m&mvi=1&pl=22&lsparams=ipbypass,met,mh,mip,mm,mn,ms,mv,mvi,pl,rms&lsig=ACJ0pHgwRQIgY2GK2YoeQV1MOrZNAkDEGbIkolmg0i66SA2qjQI61rECIQC5IrlG1uOWHbdkH1B9ifmLxJptZBiXtKCC_e3Ja-7xIg%3D%3D"></video>
+            </div>
+            <div className="p-8 flex flex-col gap-4 col-start-9 col-end-13 rounded-3xl bg-Share_color">
+                <h1 className="text-xl mb-2">Nutrition Information</h1>
+                <div className="flex justify-between border-b">
+                    <h1>Calories</h1>
+                    <h1>219.9kcal</h1>
+                </div>
+                <div className="flex justify-between border-b">
+                    <h1>Calories</h1>
+                    <h1>219.9kcal</h1>
+                </div>
             </div>
         </div>
     )

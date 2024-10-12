@@ -28,6 +28,7 @@ module.exports = {
         Healty_food_color_from: "rgba(53, 115, 85, 1)",
         Healty_food_color_to: "rgba(29, 72, 59, 1)",
         Form_text_color: "rgba(0, 0, 0, 0.6)",
+        Share_color: "rgba(231, 250, 254, 1)",
       },
       rotate: {
         '1': '1deg',
