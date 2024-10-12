@@ -95,7 +95,7 @@ const articles = [
     },
 ]
 
-const   Tasties = [
+export const   Tasties = [
     {
         type: "recipe",
         title: "ifwej wefjiwejf weiwejf",
