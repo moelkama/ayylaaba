@@ -27,11 +27,11 @@ const recipes = [
     },
 ]
 
-export default function Check_out() {
+export default function Check_out(props) {
     return (
         <div className="flex flex-col gap-10">
-            <h1 className="text-center text-2xl font-bold">Check out the delicious recipe</h1>
-            <div className="flex grid-cols-4 gap-6">
+            <h1 className="text-center text-2xl font-bold">{props.title}</h1>
+            <div className="grid grid-cols-4 gap-6">
                 {recipes.map((recipe, index) => 
                 {
                     return <Recipe key={index} recipe={recipe} />

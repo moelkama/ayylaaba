@@ -7,7 +7,7 @@ export default function Contact() {
         <>
             <Contact_Form />
             <Deliciousness />
-            <Check_out />
+            <Check_out title="Check out the delicious recipe"/>
         </>
     )
 }

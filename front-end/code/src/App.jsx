@@ -9,7 +9,7 @@ import Recipe_details from './components/Recipe/Recipe_details';
 
 function App() {
   return (
-      <main className="px-10 flex flex-col gap-20">
+      <main className="px-40 flex flex-col gap-20">
         <Nav />
         <Routes>
           <Route path="/" element={<Home />} />

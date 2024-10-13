@@ -1,8 +1,8 @@
 
-function    Blog_article(props) {
+export default function Blog_article(props) {
     return (
         <div className="flex gap-8">
-            <img alt="" className="rounded-2xl w-96 object-cover" src={props.article_src}></img>
+            <img alt="" className="rounded-2xl h-72 w-96 object-cover" src={props.article_src}></img>
             <div className="flex flex-col justify-evenly">
                 <h1 className="text-3xl font-bold">{props.title}</h1>
                 <p className="text-slate-600">{props.description}</p>
@@ -15,5 +15,3 @@ function    Blog_article(props) {
         </div>
     )
 }
-
-export default Blog_article;

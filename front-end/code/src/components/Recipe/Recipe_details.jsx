@@ -6,13 +6,10 @@ import Tasty_recipe from "../Blog/Tasty_recipe";
 import Healty_food from "../Adds/Healty_food";
 import { Checkbox, ListItemText, MenuItem } from '@mui/material';
 import React, { useState } from 'react';
-// import FavoriteBorder from '@mui/icons-material/FavoriteBorder';
-// import Favorite from '@mui/icons-material/Favorite';
-
-// import { pink } from '@mui/material/colors';
 import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
-// import CheckCircleIcon from '@mui/icons-material/CheckCircleIcon';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import Deliciousness from '../Home/Deliciousness';
+import Check_out from '../Contact/Check_out';
 
 // const recipes = [
 //     {
@@ -86,23 +83,73 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 //     }
 // ]
 
-const list = [
-    'Apple',
-    'Banana',
-    'Cherry',
-    'Date',
-    'Elderberry',
+const dishs = [
+    {value: 'Apple'},
+    {value: 'Banana'},
+    {value: 'Cherry'},
+    {value: 'Date'},
+    {value: 'Elderberry'},
   ];
+
+const sauces = [
+    {value: 'Soy Sauce'},
+    {value: 'Tomato Sauce'},
+    {value: 'Chilli Sauce'},
+    {value: 'Mayonnaise'},
+    {value: 'Ketchup'},
+];
+
+const directions = [
+    {
+        value:'line a muffin pan with paper liners.' ,
+        description: 'Preheat the oven to 350 degrees F (175 degrees C). Grease and flour a 9x9 inch pan or line a muffin pan with paper liners.',
+        src: "https://s3-alpha-sig.figma.com/img/a189/2470/3d3ad37c1b04115b9d86b67b82023a90?Expires=1729468800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=giboxWzPZKliojDgSD7MbkL1vKTLeaSk305zT2rzQAak-8K2QW~4LNfWgACTGiaGTjZUc8PdBeW5AW622uffCAz61aHf4qEklfSg4tO3RmVPrGZo4tIm6cq5j89GCMXL8RCXiEalL~XSu~cirrnJMd0TJnBlRn9uPexza0jLDzY20z3dqdJe5ob8Ql3Tqit52KpaZlKarGvO~PG9KoLGLndWYG~CwGACyTNHAnbNmlpDU8KupC6s-dx4AGek-~nN5dhC7lXcnml5IXDXwjf2LG7R7JCQltPnnqMyGg9ZeAWRsLXVaTUVTOBTdZXjiZBKlWtv5SmOHqSe6jJHQn8Yvw__",
+    },
+    {
+        value:'line a muffin pan with paper liners.' ,
+        description: 'Preheat the oven to 350 degrees F (175 degrees C). Grease and flour a 9x9 inch pan or line a muffin pan with paper liners.',
+    },
+    {
+        value:'line a muffin pan with paper liners.' ,
+        description: 'Preheat the oven to 350 degrees F (175 degrees C). Grease and flour a 9x9 inch pan or line a muffin pan with paper liners.',
+    },
+    {
+        value:'line a muffin pan with paper liners.' ,
+        description: 'Preheat the oven to 350 degrees F (175 degrees C). Grease and flour a 9x9 inch pan or line a muffin pan with paper liners.',
+    },
+]
 
 function    Options(props){
     return(
         <>
-            <h1 className="text-xl">{props.title}</h1>
+            <h1 className="text-xl font-bold">{props.title ? props.title : ''}</h1>
             {props.options.map((option) => (
-                <MenuItem style={{ borderBottom: 2 }} key={option} onClick={() => props.toggleItem(option)}>
+                <div id={`${option.value}-Checkbox`} className="border-slate-200 border-b pb-4 flex justify-start items-center" key={option.value} onClick={() => props.toggleItem(option)}>
                     <Checkbox style={{ color: 'black' }} icon={<RadioButtonUncheckedIcon />} checkedIcon={<CheckCircleIcon />}/>
-                    <ListItemText id={`${option}-Checkbox`} primary={option} />
-                </MenuItem>
+                    <div className="flex flex-col justify-center ">
+                        <ListItemText primary={option.value} />
+                        <h1 className="text-slate-600 text-wrap">{option.description}</h1>
+                        {option.src && <img alt="" className="mt-6 rounded-3xl" src={option.src} />}
+                    </div>
+                </div>
+            ))}
+        </>
+    )
+}
+
+function    Directions(props){
+    return(
+        <>
+            <h1 className="text-xl font-bold">{props.title ? props.title : ''}</h1>
+            {props.options.map((option) => (
+                <div id={`${option.value}-Checkbox`} className="border-slate-200 border-b pb-4 flex" key={option.value} onClick={() => props.toggleItem(option)}>
+                    <Checkbox style={{ color: 'black' }} icon={<RadioButtonUncheckedIcon />} checkedIcon={<CheckCircleIcon />}/>
+                    <div className="flex flex-col">
+                        <ListItemText primary={option.value} />
+                        <h1 className="text-slate-600 text-wrap">{option.description}</h1>
+                        {option.src && <img alt="" className="mt-6 rounded-3xl" src={option.src} />}
+                    </div>
+                </div>
             ))}
         </>
     )
@@ -119,25 +166,25 @@ function Recipe_Information(Information) {
 
 export  default function Recipe_details() {
     // const { id } = useParams();
-    const [selectedItems, setSelectedItems] = useState([]);
+    // const [selectedItems, setSelectedItems] = useState([]);
 
     const toggleItem = (item) => {
         document.getElementById(`${item}-Checkbox`).className = "text-slate-300 line-through";
-      setSelectedItems((prevSelected) =>
-      {
-        if (prevSelected.includes(item))
-        {
-            prevSelected.filter((i) => i !== item)
-        }
-        else
-        {
-            prevSelected.push(item);
-        }
-        });
+        // setSelectedItems(() =>
+        // {
+        //     if (selectedItems.includes(item))
+        //     {
+        //         selectedItems.filter((i) => i !== item)
+        //     }
+        //     else
+        //     {
+        //         selectedItems.push(item);
+        //     }
+        // });
     };
 
     return (
-        <div className="flex flex-col gap-16">
+        <div className="flex flex-col gap-16 mb-20">
             <div className="bg-blue-700l grid grid-cols-12 gap-x-10 gap-y-20">
                 <div className="col-start-1 col-end-9 flex flex-col gap-14">
                     <h1 className="text-5xl font-bold">Health Japanese Fried Rice</h1>
@@ -178,10 +225,13 @@ export  default function Recipe_details() {
                     </div>
                 </div>
                 <div className="col-start-1 col-end-9">
-                    <video className="h-full w-full rounded-3xl" controls type="video/mp4" src="https://rr1---sn-h5q7knez.googlevideo.com/videoplayback?expire=1728714814&ei=3sMJZ8DJDqHGjuMPt93C4QU&ip=118.99.68.4&id=o-ABMIG6j8o9o8mo8aHYv8MJ95m-J6ZfgDArLaNHmGVLwl&itag=137&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&bui=AXLXGFTB1g_nqFwMVpN4E0nNaF9ZxKNK8XEK9j7Tj5WGIWLsepdXvGxkfdYFiPbC_OYBGzTcuEtlgd6G&vprv=1&mime=video%2Fmp4&rqh=1&gir=yes&clen=28304680&dur=88.708&lmt=1696295815407686&keepalive=yes&fexp=24350655,24350673,51300760&c=MEDIA_CONNECT_FRONTEND&txp=5318224&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cbui%2Cvprv%2Cmime%2Crqh%2Cgir%2Cclen%2Cdur%2Clmt&sig=AJfQdSswRgIhALpBoId8EJg5nf5r9ID9XJN50AHgNP7IxL9jC8kmo8MeAiEA49ptozVrzB8YKMKY19O3gbBrExuh8QqJpIKVzVcAXe8%3D&rm=sn-cp1oxu-n0cl7e,sn-a5mye7e&rrc=79,104&req_id=8fc242569ef7a3ee&met=1728693263,&rms=rdu,au&redirect_counter=2&cms_redirect=yes&cmsv=e&ipbypass=yes&mh=rw&mip=197.147.159.225&mm=29&mn=sn-h5q7knez&ms=rdu&mt=1728692938&mv=m&mvi=1&pl=22&lsparams=ipbypass,met,mh,mip,mm,mn,ms,mv,mvi,pl,rms&lsig=ACJ0pHgwRQIgY2GK2YoeQV1MOrZNAkDEGbIkolmg0i66SA2qjQI61rECIQC5IrlG1uOWHbdkH1B9ifmLxJptZBiXtKCC_e3Ja-7xIg%3D%3D"></video>
+                    <video className="w-full bg-yellow-500 rounded-3xl" autoPlay type="video/mp4" src="/cooking.mp4"></video>
                 </div>
-                <div className="p-8 flex flex-col gap-4 col-start-9 col-end-13 rounded-3xl bg-Share_color">
+                <div className="h-auto overflow-y-auto p-8 flex flex-col gap-8 col-start-9 col-end-13 rounded-3xl bg-Share_color">
                     <h1 className="text-xl mb-2">Nutrition Information</h1>
+                    <Recipe_Information k="Calories" value="219.9kcal" />
+                    <Recipe_Information k="Calories" value="219.9kcal" />
+                    <Recipe_Information k="Calories" value="219.9kcal" />
                     <Recipe_Information k="Calories" value="219.9kcal" />
                     <Recipe_Information k="Calories" value="219.9kcal" />
                     <Recipe_Information k="Calories" value="219.9kcal" />
@@ -196,8 +246,13 @@ export  default function Recipe_details() {
                     <h1 className="text-2xl font-bold">Ingredients</h1>
                     <div className="flex flex-col gap-4">
                         {/**************************/}
-                        <Options title="For man dish" options={list} toggleItem={toggleItem} />
+                        <Options title="For man dish" options={dishs} toggleItem={toggleItem} />
+                        <Options title="For the sauce" options={sauces} toggleItem={toggleItem} />
                         {/**************************/}
+                    </div>
+                    <div className="flex flex-col gap-4">
+                        <h1 className="text-2xl font-bold">Direction</h1>
+                        <Directions options={directions} toggleItem={toggleItem} />
                     </div>
                 </div>
                 <div className="col-start-9 col-end-13 flex flex-col gap-6">
@@ -214,6 +269,8 @@ export  default function Recipe_details() {
                     </div>
                 </div>
             </div>
+            <Deliciousness />
+            <Check_out title="You may like these recipes too"/>
         </div>
     )
 }
