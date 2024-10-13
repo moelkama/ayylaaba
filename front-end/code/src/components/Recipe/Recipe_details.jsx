@@ -86,13 +86,27 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 //     }
 // ]
 
-const options = [
+const list = [
     'Apple',
     'Banana',
     'Cherry',
     'Date',
     'Elderberry',
   ];
+
+function    Options(props){
+    return(
+        <>
+            <h1 className="text-xl">{props.title}</h1>
+            {props.options.map((option) => (
+                <MenuItem style={{ borderBottom: 2 }} key={option} onClick={() => props.toggleItem(option)}>
+                    <Checkbox style={{ color: 'black' }} icon={<RadioButtonUncheckedIcon />} checkedIcon={<CheckCircleIcon />}/>
+                    <ListItemText id={`${option}-Checkbox`} primary={option} />
+                </MenuItem>
+            ))}
+        </>
+    )
+}
 
 function Recipe_Information(Information) {
     return (
@@ -108,10 +122,18 @@ export  default function Recipe_details() {
     const [selectedItems, setSelectedItems] = useState([]);
 
     const toggleItem = (item) => {
-        const element = document.getElementById(`${item}-Checkbox`);
+        document.getElementById(`${item}-Checkbox`).className = "text-slate-300 line-through";
       setSelectedItems((prevSelected) =>
-        prevSelected.includes(item) ? prevSelected.filter((i) => i !== item) : [...prevSelected, item]
-      );
+      {
+        if (prevSelected.includes(item))
+        {
+            prevSelected.filter((i) => i !== item)
+        }
+        else
+        {
+            prevSelected.push(item);
+        }
+        });
     };
 
     return (
@@ -174,21 +196,8 @@ export  default function Recipe_details() {
                     <h1 className="text-2xl font-bold">Ingredients</h1>
                     <div className="flex flex-col gap-4">
                         {/**************************/}
-                        <h1 className="text-xl">For man dish</h1>
-                        {options.map((option) => (
-                            <MenuItem style={{ borderBottom: 2 }} key={option} onClick={() => toggleItem(option)}>
-                                <Checkbox style={{ color: 'black' }} icon={<RadioButtonUncheckedIcon />} checkedIcon={<CheckCircleIcon />}/>
-                                <ListItemText id={`${option}-Checkbox`} primary={option} />
-                            </MenuItem>
-                        ))}
+                        <Options title="For man dish" options={list} toggleItem={toggleItem} />
                         {/**************************/}
-
-
-
-
-
-
-
                     </div>
                 </div>
                 <div className="col-start-9 col-end-13 flex flex-col gap-6">
