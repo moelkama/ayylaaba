@@ -1,9 +1,9 @@
 
 export default function Blog_article(props) {
     return (
-        <div className="flex gap-8">
+        <div className=" flex gap-8">
             <img alt="" className="rounded-2xl h-72 w-96 object-cover" src={props.article_src}></img>
-            <div className="flex flex-col justify-evenly">
+            <div className="flex-1 flex flex-col justify-evenly">
                 <h1 className="text-3xl font-bold">{props.title}</h1>
                 <p className="text-slate-600">{props.description}</p>
                 <div className="flex items-center gap-4">

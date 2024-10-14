@@ -166,26 +166,27 @@ function Recipe_Information(Information) {
 
 export  default function Recipe_details() {
     // const { id } = useParams();
-    // const [selectedItems, setSelectedItems] = useState([]);
+    const [selectedItems, setSelectedItems] = useState([]);
 
     const toggleItem = (item) => {
-        document.getElementById(`${item}-Checkbox`).className = "text-slate-300 line-through";
-        // setSelectedItems(() =>
-        // {
-        //     if (selectedItems.includes(item))
-        //     {
-        //         selectedItems.filter((i) => i !== item)
-        //     }
-        //     else
-        //     {
-        //         selectedItems.push(item);
-        //     }
-        // });
+        document.getElementById(`${"Apple"}-Checkbox`).className = "text-slate-300 line-through";
+        setSelectedItems(() =>
+        {
+            if (selectedItems.includes(item))
+            {
+                // setSelectedItems(selectedItems.filter((i) => i !== item));
+                setSelectedItems(selectedItems => [...selectedItems, item])
+            }
+            else
+            {
+                setSelectedItems(selectedItems => [...selectedItems, item])
+            }
+        });
     };
 
     return (
         <div className="flex flex-col gap-16 mb-20">
-            <div className="bg-blue-700l grid grid-cols-12 gap-x-10 gap-y-20">
+            <div className="bg-blue-700l grid grid-rows-1 grid-cols-12 gap-x-10 gap-y-20">
                 <div className="col-start-1 col-end-9 flex flex-col gap-14">
                     <h1 className="text-5xl font-bold">Health Japanese Fried Rice</h1>
                     <div className="flex">
@@ -227,7 +228,7 @@ export  default function Recipe_details() {
                 <div className="col-start-1 col-end-9">
                     <video className="w-full bg-yellow-500 rounded-3xl" autoPlay type="video/mp4" src="/cooking.mp4"></video>
                 </div>
-                <div className="h-auto overflow-y-auto p-8 flex flex-col gap-8 col-start-9 col-end-13 rounded-3xl bg-Share_color">
+                <div className=" overflow-y-auto p-8 flex flex-col gap-8 col-start-9 col-end-13 rounded-3xl bg-Share_color">
                     <h1 className="text-xl mb-2">Nutrition Information</h1>
                     <Recipe_Information k="Calories" value="219.9kcal" />
                     <Recipe_Information k="Calories" value="219.9kcal" />
@@ -236,7 +237,6 @@ export  default function Recipe_details() {
                     <Recipe_Information k="Calories" value="219.9kcal" />
                     <Recipe_Information k="Calories" value="219.9kcal" />
                     <Recipe_Information k="Calories" value="219.9kcal" />
-                    
                     <span className="text-center mt-auto">Lorem ipsum dolor sit amet Veritatis voluptate, adipisci rerum dignissimos explicabo cupiditate laudantium quasi</span>
                 </div>
             </div>
