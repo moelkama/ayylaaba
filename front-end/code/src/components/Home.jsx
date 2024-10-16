@@ -6,7 +6,6 @@ import Delicious from './Home/Delicious';
 import Adds from './Home/Adds';
 import Chef from './Home/Chef';
 import Deliciousness from './Home/Deliciousness';
-import PaginatedComponent from './Home/tst';
 
 const Home = () => {
     return (
@@ -18,7 +17,6 @@ const Home = () => {
             <Instagram />
             <Delicious />
             <Deliciousness />
-            <PaginatedComponent />
         </Fragment>
     )
 }
