@@ -1,5 +1,5 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStopwatch, faUtensils } from '@fortawesome/free-solid-svg-icons';
+
+
 import { Link } from 'react-router-dom';
 
 function    Recipe({recipe}) {
