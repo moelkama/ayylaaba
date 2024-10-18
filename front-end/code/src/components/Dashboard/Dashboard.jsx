@@ -16,8 +16,7 @@ function heade(props) {
 export default function Dashboard() {
     return (
         <div className="flex flex-col gap-10">
-            <h1>hello world</h1>
-            <heade title="Dashboard" />
+            <heade />
         </div>
     )
 }

@@ -11,7 +11,7 @@ import Dashboard from './components/Dashboard/Dashboard';
 
 function App() {
   return (
-      <main className="px-40 flex flex-col gap-20">
+      <main className="min-h-screen px-40 flex flex-col justify-between gap-20">
         <Nav />
         <Routes>
           <Route path="/" element={<Home />} />
