@@ -10,7 +10,7 @@ function    Add({add})
             <div className="rounded-l-3xl bg-[#E7FAFE] px-8 py-4 flex flex-col h-[450px] justify-between">
                 <div className="flex flex-col gap-3">
                     <div className="bg-white flex justify-evenly items-center rounded-full px-3 py-1 w-[150px] h-[40px]">
-                        <img className="w-[18px] h-[18px]" alt="" src="https://s3-alpha-sig.figma.com/img/51c7/36f5/6cfbc8134f5a924b133a66f1dac4be2b?Expires=1729468800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=KXSHxqEzkMxeqZcPHEgFXXLh5Ya5BlgMtXnrap4l862is1mog6FLCNiF6nolzmsH1CCs7nZ37OVCVEipSQ1sgjrdSs0RXX1mXLF-WNdrGceW0GauyVIWYElusCu91KbspIC5Vl8c2cxjKaZ~GEdtQvRdU5fQpVloW6ICUyx3NYQg3EZdRjdwNLIz4B~Lblm9gyR1esbRb9sKj5MxaA6AMWVC6f56RHtYlythaqoq8bP1fQ7POu30B4BazBPa~19rwKHJ8K~RMsydnRLwo78s84ITvx7U3vCCJLApYUKU4LT4j7cxEAbSU4dFmMBs6de3ddVxk5-FKdcbpJ9NpyjQbg__"></img>
+                        <img className="w-[18px] h-[18px]" alt="" src="/recipes/IEFJ1SD32LLIS5KF32FWE1.png"></img>
                         <span className="font-semibold">Hot Recipes</span>
                     </div>
                     <div className="w-[300px]">

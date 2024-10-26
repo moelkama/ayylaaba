@@ -7,7 +7,7 @@ export default function Contact_Form() {
             </div>
             <div className="grid grid-cols-12 justify-betwee gap-14">
                 <div className="bg-gradient-to-b rounded-3xl col-start-1 col-end-4 flex justify-center from-Chef_color_from to-Chef_color_to">
-                    <img alt="" className="w-4/5" src="https://s3-alpha-sig.figma.com/img/414f/c18f/afbaa5fcefacf7171da5ef1ce68cf748?Expires=1729468800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=KwIFB5skQR9yH1pUVwtGX~UMCV0fpy~Oj8QWsGnlOk1bpaiD-u6whS7XE52t9P~~t-o3jltfrfb1kpWUw4lgVld-oggaXRu9e396ZQiKN6pzZksIRCtZwPTOXMHp5BEk~qkQ3PpMlUASYk81mR0EAXAit5W8hSS4hEDztpCyaUpVSVoKZqwKvvkEuH5dNl7Q6-3gy-nEs8oujlGVUqDll-tK1f58mvQIeGy0K5le8pO9az0EUCeaTzv3C-8XABMz57z6MRb4Kele24cqSFMFWzwGkYLFwQLx3LXycUPbrosyfhEtg5D-JuzwaFKD1Pr-8Sj9QRoh5idfD9OIumg5ag__"></img>
+                    <img alt="" className="w-4/5" src="/chef/chef_like.png"></img>
                 </div>
                 <form className="flex justify-between flex-wrap gap-4 col-start-4 col-end-13">
                     <label className="text-lg font-bold w-[45%]">
