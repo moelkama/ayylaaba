@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Blog_article from './Blog_article';
 import Tasty_recipe from "./Tasty_recipe";
 import Healty_food from "../Adds/Healty_food";
