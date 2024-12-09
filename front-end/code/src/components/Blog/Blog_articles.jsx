@@ -1,184 +1,8 @@
 import React, { useState } from 'react';
-// import ReactPaginate from 'react-paginate';
 import Blog_article from './Blog_article';
 import Tasty_recipe from "./Tasty_recipe";
 import Healty_food from "../Adds/Healty_food";
 import Pagination from 'react-js-pagination';
-
-const articles = [
-    {
-        title: "Crochet Projects for Noodle Lovers",
-        description: "for Noodle Lovers Crochet Projects for Noodle Lovers Crochet Projects for Noodle Lovers for Noodle Lovers Lovers Crochet Projects for Noodle Lovers Crochet Projects for Noodle Lovers for Noodle Lovers",
-        article_author_name: "Wade Warren",
-        date: "12 November 2021",
-        article_author_src: "/authors/Wade_Warren.png",
-        article_src: "/recipes/19b579cff4368a1bfcba9e2f306d4c99.png",
-    },
-    {
-        title: "10 Vegetarian Recipes To Eat This Month",
-        description: "for Noodle Lovers Crochet Projects for Noodle Lovers Crochet Projects for Noodle Lovers for Noodle Lovers Lovers Crochet Projects for Noodle Lovers Crochet Projects for Noodle Lovers for Noodle Lovers",
-        article_author_name: "Wade Warren",
-        date: "12 November 2021",
-        article_author_src: "/authors/jame.png",
-        article_src: "/recipes/ed632c57bc587dbdac7f55f2088fd4ff.png",
-    },
-    {
-        title: "Full Guide to Becoming a Professional Chef",
-        description: "for Noodle Lovers Crochet Projects for Noodle Lovers Crochet Projects for Noodle Lovers for Noodle Lovers Lovers Crochet Projects for Noodle Lovers Crochet Projects for Noodle Lovers for Noodle Lovers",
-        article_author_name: "Wade Warren",
-        date: "12 November 2021",
-        article_author_src: "/authors/youns.png",
-        article_src: "/recipes/a4292927efc17ee09591649f7a1b7364.png",
-    },
-    {
-        title: "Simple & Delicious Vegetarian Lasagna",
-        description: "for Noodle Lovers Crochet Projects for Noodle Lovers Crochet Projects for Noodle Lovers for Noodle Lovers Lovers Crochet Projects for Noodle Lovers Crochet Projects for Noodle Lovers for Noodle Lovers",
-        article_author_name: "Wade Warren",
-        date: "12 November 2021",
-        article_author_src: "/authors/elkam.png",
-        article_src: "/recipes/463ad3eadcaf16571ba4f3a0ff32b879.png",
-    },
-    {
-        title: "Plantain and Pinto Stew with Aji Verde",
-        description: "for Noodle Lovers Crochet Projects for Noodle Lovers Crochet Projects for Noodle Lovers for Noodle Lovers Lovers Crochet Projects for Noodle Lovers Crochet Projects for Noodle Lovers for Noodle Lovers",
-        article_author_name: "Wade Warren",
-        date: "12 November 2021",
-        article_author_src: "/authors/Ellon_musk.png",
-        article_src: "/recipes/72edf0c22c3c10c3199734e1fb943b72.png",
-    },
-    {
-        title: "We’re Hiring a Communications Assistant!",
-        description: "for Noodle Lovers Crochet Projects for Noodle Lovers Crochet Projects for Noodle Lovers for Noodle Lovers Lovers Crochet Projects for Noodle Lovers Crochet Projects for Noodle Lovers for Noodle Lovers",
-        article_author_name: "Wade Warren",
-        date: "12 November 2021",
-        article_author_src: "authors/john_smith.png",
-        article_src: "/recipes/5ca2b1499887b1352b453e3a44d63b01.png",
-    },
-
-
-
-
-
-
-
-
-
-
-
-
-    {
-        title: "10 Vegetarian Recipes To Eat This Month",
-        description: "for Noodle Lovers Crochet Projects for Noodle Lovers Crochet Projects for Noodle Lovers for Noodle Lovers Lovers Crochet Projects for Noodle Lovers Crochet Projects for Noodle Lovers for Noodle Lovers",
-        article_author_name: "Wade Warren",
-        date: "12 November 2021",
-        article_author_src: "/authors/jame.png",
-        article_src: "/recipes/ed632c57bc587dbdac7f55f2088fd4ff.png",
-    },
-    {
-        title: "Plantain and Pinto Stew with Aji Verde",
-        description: "for Noodle Lovers Crochet Projects for Noodle Lovers Crochet Projects for Noodle Lovers for Noodle Lovers Lovers Crochet Projects for Noodle Lovers Crochet Projects for Noodle Lovers for Noodle Lovers",
-        article_author_name: "Wade Warren",
-        date: "12 November 2021",
-        article_author_src: "/authors/Ellon_musk.png",
-        article_src: "/recipes/72edf0c22c3c10c3199734e1fb943b72.png",
-    },
-    {
-        title: "We’re Hiring a Communications Assistant!",
-        description: "for Noodle Lovers Crochet Projects for Noodle Lovers Crochet Projects for Noodle Lovers for Noodle Lovers Lovers Crochet Projects for Noodle Lovers Crochet Projects for Noodle Lovers for Noodle Lovers",
-        article_author_name: "Wade Warren",
-        date: "12 November 2021",
-        article_author_src: "authors/john_smith.png",
-        article_src: "/recipes/5ca2b1499887b1352b453e3a44d63b01.png",
-    },
-    {
-        title: "Crochet Projects for Noodle Lovers",
-        description: "for Noodle Lovers Crochet Projects for Noodle Lovers Crochet Projects for Noodle Lovers for Noodle Lovers Lovers Crochet Projects for Noodle Lovers Crochet Projects for Noodle Lovers for Noodle Lovers",
-        article_author_name: "Wade Warren",
-        date: "12 November 2021",
-        article_author_src: "/authors/Wade_Warren.png",
-        article_src: "/recipes/19b579cff4368a1bfcba9e2f306d4c99.png",
-    },
-    {
-        title: "Full Guide to Becoming a Professional Chef",
-        description: "for Noodle Lovers Crochet Projects for Noodle Lovers Crochet Projects for Noodle Lovers for Noodle Lovers Lovers Crochet Projects for Noodle Lovers Crochet Projects for Noodle Lovers for Noodle Lovers",
-        article_author_name: "Wade Warren",
-        date: "12 November 2021",
-        article_author_src: "/authors/youns.png",
-        article_src: "/recipes/a4292927efc17ee09591649f7a1b7364.png",
-    },
-    {
-        title: "Simple & Delicious Vegetarian Lasagna",
-        description: "for Noodle Lovers Crochet Projects for Noodle Lovers Crochet Projects for Noodle Lovers for Noodle Lovers Lovers Crochet Projects for Noodle Lovers Crochet Projects for Noodle Lovers for Noodle Lovers",
-        article_author_name: "Wade Warren",
-        date: "12 November 2021",
-        article_author_src: "/authors/elkam.png",
-        article_src: "/recipes/463ad3eadcaf16571ba4f3a0ff32b879.png",
-    },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    {
-        title: "We’re Hiring a Communications Assistant!",
-        description: "for Noodle Lovers Crochet Projects for Noodle Lovers Crochet Projects for Noodle Lovers for Noodle Lovers Lovers Crochet Projects for Noodle Lovers Crochet Projects for Noodle Lovers for Noodle Lovers",
-        article_author_name: "Wade Warren",
-        date: "12 November 2021",
-        article_author_src: "authors/john_smith.png",
-        article_src: "/recipes/5ca2b1499887b1352b453e3a44d63b01.png",
-    },
-    {
-        title: "Plantain and Pinto Stew with Aji Verde",
-        description: "for Noodle Lovers Crochet Projects for Noodle Lovers Crochet Projects for Noodle Lovers for Noodle Lovers Lovers Crochet Projects for Noodle Lovers Crochet Projects for Noodle Lovers for Noodle Lovers",
-        article_author_name: "Wade Warren",
-        date: "12 November 2021",
-        article_author_src: "/authors/Ellon_musk.png",
-        article_src: "/recipes/72edf0c22c3c10c3199734e1fb943b72.png",
-    },
-    {
-        title: "Crochet Projects for Noodle Lovers",
-        description: "for Noodle Lovers Crochet Projects for Noodle Lovers Crochet Projects for Noodle Lovers for Noodle Lovers Lovers Crochet Projects for Noodle Lovers Crochet Projects for Noodle Lovers for Noodle Lovers",
-        article_author_name: "Wade Warren",
-        date: "12 November 2021",
-        article_author_src: "/authors/Wade_Warren.png",
-        article_src: "/recipes/19b579cff4368a1bfcba9e2f306d4c99.png",
-    },
-    {
-        title: "10 Vegetarian Recipes To Eat This Month",
-        description: "for Noodle Lovers Crochet Projects for Noodle Lovers Crochet Projects for Noodle Lovers for Noodle Lovers Lovers Crochet Projects for Noodle Lovers Crochet Projects for Noodle Lovers for Noodle Lovers",
-        article_author_name: "Wade Warren",
-        date: "12 November 2021",
-        article_author_src: "/authors/jame.png",
-        article_src: "/recipes/ed632c57bc587dbdac7f55f2088fd4ff.png",
-    },
-    {
-        title: "Simple & Delicious Vegetarian Lasagna",
-        description: "for Noodle Lovers Crochet Projects for Noodle Lovers Crochet Projects for Noodle Lovers for Noodle Lovers Lovers Crochet Projects for Noodle Lovers Crochet Projects for Noodle Lovers for Noodle Lovers",
-        article_author_name: "Wade Warren",
-        date: "12 November 2021",
-        article_author_src: "/authors/elkam.png",
-        article_src: "/recipes/463ad3eadcaf16571ba4f3a0ff32b879.png",
-    },
-    {
-        title: "Full Guide to Becoming a Professional Chef",
-        description: "for Noodle Lovers Crochet Projects for Noodle Lovers Crochet Projects for Noodle Lovers for Noodle Lovers Lovers Crochet Projects for Noodle Lovers Crochet Projects for Noodle Lovers for Noodle Lovers",
-        article_author_name: "Wade Warren",
-        date: "12 November 2021",
-        article_author_src: "/authors/youns.png",
-        article_src: "/recipes/a4292927efc17ee09591649f7a1b7364.png",
-    },
-]
 
 export const   Tasties = [
     {
@@ -202,16 +26,22 @@ export const   Tasties = [
 ]
 
 function Blog_articles() {
-        const [activePage, setActivePage] = useState(1);
-        const itemsPerPage = 6;
-      
-        const handlePageChange = (pageNumber) => {
-          setActivePage(pageNumber);
-        };
+    const [articles, setArticles] = useState([]);
+    useEffect(() => {
+        fetch('/data/recipes.json')
+          .then(response => response.json())
+          .then(articles => setArticles(articles))
+          .catch(error => console.error('Error fetching data:', error));
+      }, []);
+    const [activePage, setActivePage] = useState(1);
+    const itemsPerPage = 6;
+
+    const handlePageChange = (pageNumber) => {
+        setActivePage(pageNumber);
+    };
 
     const startIndex = (activePage - 1) * itemsPerPage;
     const paginatedItems = articles.slice(startIndex, startIndex + itemsPerPage);
-      
 
     return (
         <>

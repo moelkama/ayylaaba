@@ -8,6 +8,7 @@ import Contact from './components/Contact/Contact';
 import Recipe_details from './components/Recipe/Recipe_details';
 import NotFound from './components/NotFound';
 import { SpeedInsights } from "@vercel/speed-insights/react"
+
 function App() {
   return (
       <main className="px-40 flex flex-col gap-20">

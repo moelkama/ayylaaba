@@ -18,10 +18,7 @@ function    Recipes() {
                 <p className="text-center text-slate-600">Lorem ipsum dolor sit amet, consectetuipisicing elit<br></br>tempor aliqut enim ad minim</p>
             </div>
             <div className="grid grid-cols-3 gap-6">
-                {recipes.map((recipe, index) => {
-                    // src={recipe.src} description={recipe.description} dury={recipe.dury} type={recipe.type}
-                    return <Recipe key={index} recipe={recipe}/>
-                })}
+                {recipes.map((recipe, index) => <Recipe key={index} recipe={recipe}/> )}
             </div>
         </div>
     );
