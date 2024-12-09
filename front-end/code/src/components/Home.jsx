@@ -10,6 +10,7 @@ import Deliciousness from './Home/Deliciousness';
 const Home = () => {
     return (
         <Fragment>
+            <h1>hello world</h1>
             <Adds />
             <Categories />
             <Recipes />
